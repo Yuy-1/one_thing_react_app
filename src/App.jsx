@@ -3,6 +3,7 @@ import { useState } from 'react'
 
 //custom components
 import CustomForm from "./components/CustomForm"
+import OneThing from "./components/OneThing"
 
 function App() {
   const [thing, setThing] = useState("")
@@ -25,6 +26,9 @@ function App() {
           handleInput={handleInput}
           handleSubmit={handleSubmit}
         />}
+        {
+          !isCompleted && <OneThing thing={thing} />
+        }
       </div>
     </main>
   )
