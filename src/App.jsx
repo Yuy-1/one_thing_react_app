@@ -25,6 +25,8 @@ function App() {
       <div className="grid place-items-center gap-8 m-8">
         { isCompleted && <CustomForm
           thing={thing}
+          handleInput={handleInput}
+          handleSubmit={handleSubmit}
         />}
       </div>
     </main>
