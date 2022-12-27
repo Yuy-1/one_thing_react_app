@@ -1,6 +1,6 @@
 import {ArrowRightCircleIcon} from "@heroicons/react/24/solid/index.js";
 
-const Form = () => {
+const Form = ({thing, handleInput, handleSubmit}) => {
   return (
     <>
     <h1 className="text-3xl sm:text=6xl font-bold text-center">What is your "One Thing"?</h1>

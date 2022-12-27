@@ -1,9 +1,6 @@
 // react imports
 import { useState } from 'react'
 
-//library imports
-import { ArrowRightCircleIcon } from '@heroicons/react/24/solid'
-
 //custom components
 import CustomForm from "./components/CustomForm"
 
