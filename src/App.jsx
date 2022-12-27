@@ -4,7 +4,7 @@ import { ArrowRightCircleIcon } from '@heroicons/react/24/solid'
 function App() {
   const [thing, setThing] = useState("")
 
-  function handleSubmit(e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     console.log(e);
   }
@@ -26,7 +26,7 @@ function App() {
           placeholder="Enter One Thing"
           autoFocus
           maxLength="64"
-          value={value}
+          value={thing}
           onInput={handleInput}
           />
           <button
