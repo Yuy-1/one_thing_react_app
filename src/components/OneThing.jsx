@@ -1,4 +1,5 @@
-import {ArrowRightCircleIcon} from "@heroicons/react/24/solid/index.js";
+// component imports
+import CustomButton from './CustomButton'
 
 const OneThing = ({thing, handleCompletedThing}) => {
   return (
