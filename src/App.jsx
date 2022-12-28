@@ -5,6 +5,12 @@ import { useState } from 'react'
 import CustomForm from "./components/CustomForm"
 import OneThing from "./components/OneThing"
 
+function getSuccessMessage(){
+  const messages = ["Congrats!", "Great job!", "Don’t ya feel great?!", "Up, up, and up!", "Um…okay", "Did you" +
+  " though?", "Don’t feel like you tried your best…", "Excelsior!"];
+  return messages[Math.floor(Math.random() * messages.length)]
+}
+
 function App() {
   const [thing, setThing] = useState("")
   const [isCompleted, setIsCompleted] = useState(true)
@@ -20,6 +26,7 @@ function App() {
 
   const handleCompletedThing = (e) => {
     e.target.setAttribute('disabled', true)
+    setThing(getSuccessMessage());
   }
 
   return(
