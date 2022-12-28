@@ -19,7 +19,7 @@ function App() {
   }
 
   const handleCompletedThing = (e) => {
-    console.log(e)
+    e.target.setAttribute('disabled', true)
   }
 
   return(
@@ -31,7 +31,8 @@ function App() {
           handleSubmit={handleSubmit}
         />}
         {
-          !isCompleted && <OneThing thing={thing} />
+          !isCompleted && <OneThing thing={thing}
+          handleCompletedThing={handleCompletedThing}/>
         }
       </div>
     </main>
