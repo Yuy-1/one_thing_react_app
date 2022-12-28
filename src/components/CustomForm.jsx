@@ -1,4 +1,6 @@
+//library imports
 import {ArrowRightCircleIcon} from "@heroicons/react/24/solid/index.js";
+
 
 const Form = ({thing, handleInput, handleSubmit}) => {
   return (

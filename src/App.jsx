@@ -1,6 +1,11 @@
 // react imports
 import { useState } from 'react'
 
+// libraries
+import JSConfetti from 'js-confetti'
+const jsConfetti = new JSConfetti()
+
+
 //custom components
 import CustomForm from "./components/CustomForm"
 import OneThing from "./components/OneThing"
@@ -8,7 +13,7 @@ import OneThing from "./components/OneThing"
 function getSuccessMessage(){
   const messages = ["Congrats!", "Great job!", "Don’t ya feel great?!", "Up, up, and up!", "Um…okay", "Did you" +
   " though?", "Don’t feel like you tried your best…", "Excelsior!"];
-  return messages[Math.floor(Math.random() * messages.length)]
+  return messages[Math.floor(Math.random() * messages.length)];
 }
 
 function App() {
@@ -24,9 +29,15 @@ function App() {
     setThing(e.target.value);
   }
 
-  const handleCompletedThing = (e) => {
-    e.target.setAttribute('disabled', true)
+  const handleCompletedThing = async (e) => {
+    e.target.setAttribute('disabled', true);
     setThing(getSuccessMessage());
+    await jsConfetti.addConfetti({
+      emojis: ["📈", "🚀", "💫"]
+    })
+    e.target.removeAttribute('disabled', true);
+    setThing("");
+    setIsCompleted(true);
   }
 
   return(
